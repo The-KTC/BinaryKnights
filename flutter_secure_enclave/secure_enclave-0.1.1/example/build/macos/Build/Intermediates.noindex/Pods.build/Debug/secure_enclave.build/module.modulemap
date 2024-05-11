@@ -1,0 +1,11 @@
+framework module secure_enclave {
+  umbrella header "secure_enclave-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module secure_enclave.Swift {
+  header "secure_enclave-Swift.h"
+  requires objc
+}

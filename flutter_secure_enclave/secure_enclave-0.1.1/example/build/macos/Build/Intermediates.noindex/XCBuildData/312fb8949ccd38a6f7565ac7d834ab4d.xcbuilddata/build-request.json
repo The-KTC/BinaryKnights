@@ -1,0 +1,64 @@
+{
+  "buildCommand" : {
+    "command" : "build",
+    "skipDependencies" : false,
+    "style" : "buildOnly"
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "18c1723432283e0cc55f10a6dcfd9e02a26d6e580d3222b86d62fb80ec380c14"
+    }
+  ],
+  "containerPath" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/macos/Runner.xcworkspace",
+  "continueBuildingAfterErrors" : false,
+  "dependencyScope" : "workspace",
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "x86_64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "macosx",
+      "sdk" : "macosx14.4",
+      "sdkVariant" : "macos",
+      "supportedArchitectures" : [
+        "x86_64h",
+        "x86_64"
+      ],
+      "targetArchitecture" : "x86_64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Products",
+      "derivedDataPath" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos",
+      "indexDataStoreFolderPath" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Index.noindex/PrecompiledHeaders",
+      "pchPath" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "commandLine" : {
+        "table" : {
+          "COMPILER_INDEX_STORE_ENABLE" : "NO",
+          "OBJROOT" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex",
+          "SYMROOT" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Products"
+        }
+      },
+      "synthesized" : {
+        "table" : {
+          "ACTION" : "build",
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "NO"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

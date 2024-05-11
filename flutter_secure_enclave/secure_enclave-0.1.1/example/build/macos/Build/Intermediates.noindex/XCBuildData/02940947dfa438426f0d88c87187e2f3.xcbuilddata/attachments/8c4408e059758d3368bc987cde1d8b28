@@ -1,0 +1,23 @@
+{
+  'version': 0,
+  'use-external-names': 'false',
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Products/Debug/secure_enclave/secure_enclave.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex/Pods.build/Debug/secure_enclave.build/unextended-module.modulemap",
+    }]
+    },
+    {
+    'type': 'directory',
+    'name': "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Products/Debug/secure_enclave/secure_enclave.framework/Headers"
+    'contents': [{
+      'type': 'file',
+      'name': "secure_enclave-Swift.h",
+      'external-contents': "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex/Pods.build/Debug/secure_enclave.build/unextended-interface-header.h",
+    }]
+    }]
+}

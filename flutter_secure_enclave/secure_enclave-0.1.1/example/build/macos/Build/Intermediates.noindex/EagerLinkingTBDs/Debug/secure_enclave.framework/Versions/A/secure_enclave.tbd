@@ -1,0 +1,96 @@
+{
+  "main_library": {
+    "exported_symbols": [
+      {
+        "data": {
+          "global": [
+            "_$s14secure_enclave4CoreCN",
+            "_$s14secure_enclave4CoreC11CustomErrorOMa",
+            "_$s10Foundation4DataV14secure_enclaveE14hexDescriptionSSvg",
+            "_$s14secure_enclave19SecureEnclavePluginC8register4withySo07FlutterE9Registrar_p_tFZ",
+            "_secure_enclaveVersionNumber",
+            "_$s14secure_enclave4CoreC12getPublicKey33_2914474F076916FA1D6B427BC7A12579LL07privateF0So03SecF3RefaAH_tKF",
+            "_$s14secure_enclave19SecureEnclavePluginC4coreAA4CoreCvpfi",
+            "_$s14secure_enclave4CoreCMm",
+            "_$sSa14secure_enclaves5UInt8VRszlE4data10Foundation4DataVvg",
+            "_$s14secure_enclave4CoreC18getPublicKeyString3tag19isRequiresBiometricSSSgSS_SbtKFTq",
+            "_$s14secure_enclave19SecureEnclavePluginCACycfc",
+            "_$s14secure_enclave4CoreCMn",
+            "_Swift51Overrides",
+            "_$s14secure_enclave4CoreC18getPublicKeyString3tag19isRequiresBiometricSSSgSS_SbtKF",
+            "_$s14secure_enclave4CoreCMa",
+            "_$s14secure_enclave19SecureEnclavePluginC6handle_6resultySo17FlutterMethodCallC_yypSgctFTq",
+            "_$s14secure_enclave4CoreC7encrypt3tag7message19isRequiresBiometricSo24FlutterStandardTypedDataCSgSS_SSSbtKF",
+            "_$s10Foundation4DataV14secure_enclaveE5bytesSays5UInt8VGvg",
+            "_$s14secure_enclave4CoreCACycfc",
+            "_$s14secure_enclave19SecureEnclavePluginCACycfC",
+            "_$s14secure_enclave19SecureEnclavePluginC4coreAA4CoreCvpWvd",
+            "_$s14secure_enclave4CoreC17preparePrivateKey33_2914474F076916FA1D6B427BC7A12579LL7keyName19isRequiresBiometricSo03SecF3RefaSS_SbtKF",
+            "_$s14secure_enclave4CoreC11CustomErrorOs0E0AAMc",
+            "_$s14secure_enclave4CoreC9removeKey4nameySS_tF",
+            "_secure_enclaveVersionString",
+            "_$s14secure_enclave4CoreC22makeAndStorePrivateKey33_2914474F076916FA1D6B427BC7A12579LL4name16requiresBiometrySo03SecH3RefaSS_SbtKF",
+            "_$s14secure_enclave19SecureEnclavePluginC4coreAA4CoreCvg",
+            "_$s14secure_enclave4CoreC22getBioSecAccessControl33_2914474F076916FA1D6B427BC7A12579LLSo0fgH3RefayKF",
+            "_$s14secure_enclave4CoreC11CustomErrorON",
+            "_$s14secure_enclave4CoreCfD",
+            "_$s10Foundation4DataV14secure_enclaveE5bytesSays5UInt8VGvpMV",
+            "_$s14secure_enclave19SecureEnclavePluginCfD",
+            "_$sSa14secure_enclaves5UInt8VRszlE4data10Foundation4DataVvpMV",
+            "_$s14secure_enclave19SecureEnclavePluginCN",
+            "_$s14secure_enclave4CoreC7decrypt3tag7message19isRequiresBiometricSSSgSS_10Foundation4DataVSbtKFTq",
+            "_Swift50Overrides",
+            "_$s14secure_enclave4CoreCACycfC",
+            "_$s14secure_enclave19SecureEnclavePluginCMa",
+            "_$s14secure_enclave4CoreC9removeKey4nameySS_tFTq",
+            "_$s14secure_enclave19SecureEnclavePluginC6handle_6resultySo17FlutterMethodCallC_yypSgctF",
+            "_$s14secure_enclave4CoreC11CustomErrorOMn",
+            "_$s14secure_enclave19SecureEnclavePluginCMn",
+            "_$s14secure_enclave4CoreCACycfCTq",
+            "_$s10Foundation4DataV14secure_enclaveE14hexDescriptionSSvpMV",
+            "_$s14secure_enclave4CoreC7encrypt3tag7message19isRequiresBiometricSo24FlutterStandardTypedDataCSgSS_SSSbtKFTq",
+            "_$s14secure_enclave4CoreCfd",
+            "_$s14secure_enclave19SecureEnclavePluginC4coreAA4CoreCvpMV",
+            "_$s14secure_enclave4CoreC7decrypt3tag7message19isRequiresBiometricSSSgSS_10Foundation4DataVSbtKF",
+            "_$s14secure_enclave4CoreC7loadKey33_2914474F076916FA1D6B427BC7A12579LL4nameSo03SecE3RefaSgSS_tKF"
+          ],
+          "objc_class": [
+            "_TtC14secure_enclave19SecureEnclavePlugin",
+            "PodsDummy_secure_enclave"
+          ]
+        },
+        "text": {
+          "global": [
+            "__ZN5swift39swift51override_conformsToSwiftProtocolEPKNS_14TargetMetadataINS_9InProcessEEEPKNS_24TargetProtocolDescriptorIS1_EEN7__swift9__runtime4llvm9StringRefEPFPKNS_35TargetProtocolConformanceDescriptorIS1_EES4_S8_SC_E",
+            "__ZN5swift34swift50override_conformsToProtocolEPKNS_14TargetMetadataINS_9InProcessEEEPKNS_24TargetProtocolDescriptorIS1_EEPFPKNS_18TargetWitnessTableIS1_EES4_S8_E",
+            "__Z34_swiftoverride_class_getSuperclassPKN5swift14TargetMetadataINS_9InProcessEEE"
+          ]
+        }
+      }
+    ],
+    "flags": [
+      {
+        "attributes": [
+          "not_app_extension_safe"
+        ]
+      }
+    ],
+    "install_names": [
+      {
+        "name": "@rpath/secure_enclave.framework/Versions/A/secure_enclave"
+      }
+    ],
+    "swift_abi": [
+      {
+        "abi": 7
+      }
+    ],
+    "target_info": [
+      {
+        "min_deployment": "10.14",
+        "target": "x86_64-macos"
+      }
+    ]
+  },
+  "tapi_tbd_version": 5
+}

@@ -1,0 +1,28 @@
+{
+  "" : {
+    "diagnostics" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex/Pods.build/Debug/secure_enclave.build/Objects-normal/x86_64/secure_enclave-master.dia",
+    "emit-module-dependencies" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex/Pods.build/Debug/secure_enclave.build/Objects-normal/x86_64/secure_enclave-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex/Pods.build/Debug/secure_enclave.build/Objects-normal/x86_64/secure_enclave-master-emit-module.dia",
+    "swift-dependencies" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex/Pods.build/Debug/secure_enclave.build/Objects-normal/x86_64/secure_enclave-master.swiftdeps"
+  },
+  "/Users/ktc/Downloads/secure_enclave-0.1.1/macos/Classes/core.swift" : {
+    "const-values" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex/Pods.build/Debug/secure_enclave.build/Objects-normal/x86_64/core.swiftconstvalues",
+    "dependencies" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex/Pods.build/Debug/secure_enclave.build/Objects-normal/x86_64/core.d",
+    "diagnostics" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex/Pods.build/Debug/secure_enclave.build/Objects-normal/x86_64/core.dia",
+    "index-unit-output-path" : "/Pods.build/Debug/secure_enclave.build/Objects-normal/x86_64/core.o",
+    "llvm-bc" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex/Pods.build/Debug/secure_enclave.build/Objects-normal/x86_64/core.bc",
+    "object" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex/Pods.build/Debug/secure_enclave.build/Objects-normal/x86_64/core.o",
+    "swift-dependencies" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex/Pods.build/Debug/secure_enclave.build/Objects-normal/x86_64/core.swiftdeps",
+    "swiftmodule" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex/Pods.build/Debug/secure_enclave.build/Objects-normal/x86_64/core~partial.swiftmodule"
+  },
+  "/Users/ktc/Downloads/secure_enclave-0.1.1/macos/Classes/SecureEnclavePlugin.swift" : {
+    "const-values" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex/Pods.build/Debug/secure_enclave.build/Objects-normal/x86_64/SecureEnclavePlugin.swiftconstvalues",
+    "dependencies" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex/Pods.build/Debug/secure_enclave.build/Objects-normal/x86_64/SecureEnclavePlugin.d",
+    "diagnostics" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex/Pods.build/Debug/secure_enclave.build/Objects-normal/x86_64/SecureEnclavePlugin.dia",
+    "index-unit-output-path" : "/Pods.build/Debug/secure_enclave.build/Objects-normal/x86_64/SecureEnclavePlugin.o",
+    "llvm-bc" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex/Pods.build/Debug/secure_enclave.build/Objects-normal/x86_64/SecureEnclavePlugin.bc",
+    "object" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex/Pods.build/Debug/secure_enclave.build/Objects-normal/x86_64/SecureEnclavePlugin.o",
+    "swift-dependencies" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex/Pods.build/Debug/secure_enclave.build/Objects-normal/x86_64/SecureEnclavePlugin.swiftdeps",
+    "swiftmodule" : "/Users/ktc/Downloads/secure_enclave-0.1.1/example/build/macos/Build/Intermediates.noindex/Pods.build/Debug/secure_enclave.build/Objects-normal/x86_64/SecureEnclavePlugin~partial.swiftmodule"
+  }
+}
