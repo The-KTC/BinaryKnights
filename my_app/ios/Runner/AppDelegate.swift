@@ -1,5 +1,5 @@
-import UIKit
 import Flutter
+import UIKit
 
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
@@ -8,6 +8,7 @@ import Flutter
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
     GeneratedPluginRegistrant.register(with: self)
+    dummy_method_to_enforce_bundling()
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 }
