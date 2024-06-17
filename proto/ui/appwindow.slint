@@ -14,7 +14,8 @@ export component AppWindow inherits Window {
 
 VerticalBox {}
     
-    in-out property <string> statusKey;
+    in-out property <string> statusKey;    
+    in-out property <string> input;
     in-out property <string> encryptedValue;
     in-out property <string> decryptedValue;
     in-out property <string> signValue;
@@ -28,28 +29,28 @@ VerticalBox {}
 
 
         HorizontalBox { 
-            encryptedValue := LineEdit {width: 300px;height: 30px;
-                accepted(text) => {root.encryptedValue = self.text;}}
+            input := LineEdit {width: 300px;height: 30px;
+                text: root.input;}
         HorizontalBox{ Button {
             width: 90px;            
             text: "Encrypt";
             clicked => {
-                root.encrypt(encryptedValue.text);}}}
-        }   
+                root.encrypt(input.text);}}}}
+        
 
-
-
-        Text {text: "Encrypted vaule:"; }
+        Text {text: "Encrypted vaule"; }
 
         HorizontalBox {
-            decryptedValue := LineEdit {width: 300px;height: 30px;
-                accepted(text) => {root.decryptedValue = self.text;}}
+            encryptedValueText := LineEdit {width: 300px;height: 30px; enabled: false;
+                text: root.encryptedValue;}
         HorizontalBox{ Button {
             width: 90px;            
             text: "Decrypt";
             clicked => {
-                root.decrypt(decryptedValue.text);}}}
+                root.decrypt(encryptedValueText.text);}}}
         }
+
+        Text {text: "Decrypted vaule: \{root.decryptedValue}"; }
         
         Text {text: "Verfiy & Sign";height: 25px;font-size: 18px;}
         Text {text: "Text to sign";}
