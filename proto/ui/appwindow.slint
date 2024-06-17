@@ -4,10 +4,13 @@ import { SpinBox, Button, CheckBox, Slider, LineEdit, ScrollView, ListView,
 
 export component AppWindow inherits Window {
     callback request-generate-keys();
+    callback encrypt(string);
+    callback decrypt(string);
+    callback sign(string);
+    callback verifyData(string);
+    callback reset();
     width: 500px;
     height: 700px;
-
-    
 
 VerticalBox {}
     
@@ -26,13 +29,12 @@ VerticalBox {}
 
         HorizontalBox { 
             encryptedValue := LineEdit {width: 300px;height: 30px;
-                accepted(text) => {self.text = "";}
-                placeholder-text: "\{root.encryptedValue}";}
+                accepted(text) => {root.encryptedValue = self.text;}}
         HorizontalBox{ Button {
             width: 90px;            
             text: "Encrypt";
             clicked => {
-                root.request-generate-keys();}}}
+                root.encrypt(encryptedValue.text);}}}
         }   
 
 
@@ -41,12 +43,12 @@ VerticalBox {}
 
         HorizontalBox {
             decryptedValue := LineEdit {width: 300px;height: 30px;
-                accepted(text) => {self.text = "";}
-                placeholder-text: "\{root.decryptedValue}";}
+                accepted(text) => {root.decryptedValue = self.text;}}
         HorizontalBox{ Button {
             width: 90px;            
             text: "Decrypt";
-            clicked => {root.request-generate-keys();}}}
+            clicked => {
+                root.decrypt(decryptedValue.text);}}}
         }
         
         Text {text: "Verfiy & Sign";height: 25px;font-size: 18px;}
@@ -55,37 +57,30 @@ VerticalBox {}
 
         HorizontalBox {
             signValue := LineEdit {width: 300px;height: 30px;
-                accepted(text) => {self.text = "";}
-                placeholder-text: "\{root.signValue}";}
+                accepted(text) => {root.signValue = self.text;}}
         HorizontalBox{ Button {
             width: 90px;            
             text: "Sign";
-            clicked => {root.request-generate-keys();}}}
+            clicked => {root.sign(signValue.text);}}}
         }
 
         Text {text: "Signature: ";}
 
         HorizontalBox {
             verfiyData := LineEdit {width: 300px;height: 30px;
-                accepted(text) => {self.text = "";}
-                placeholder-text: "\{root.verfiyData}";}
+                accepted(text) => {root.verfiyData = self.text;}}
         HorizontalBox{ Button {
             width: 90px;            
             text: "Verfiy";
-            clicked => {root.request-generate-keys();}}}
+            clicked => {root.verifyData(verfiyData.text);}}}
         }
 
         Text {text: "Verify Status";}
-        HorizontalBox {
-            verfiy := LineEdit {width: 300px;height: 30px;
-                accepted(text) => {self.text = "";}
-                placeholder-text: "\{root.verfiy}";}
-                
-            }
-              HorizontalBox{ Button {
-                width: 90px;            
-                text: "clear";
-                clicked => {root.request-generate-keys();}}}
+
+        HorizontalBox{ Button {
+            width: 90px;            
+            text: "clear";
+            clicked => {root.reset();}}}
           
     }
 }
