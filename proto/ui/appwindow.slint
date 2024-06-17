@@ -1,22 +1,22 @@
 import { SpinBox, Button, CheckBox, Slider, LineEdit, ScrollView, ListView,
-    HorizontalBox, VerticalBox, GridBox, StandardButton, Palette } from "std-widgets.slint";
+    HorizontalBox, VerticalBox, GridBox, StandardButton, Palette , StandardListView, GroupBox } from "std-widgets.slint";
+
+
 export component AppWindow inherits Window {
     callback request-generate-keys();
     width: 500px;
     height: 700px;
 
-    public function setKey(bla: string) {
-        root.privateKey = bla;
-    } 
+    
 
 VerticalBox {}
     
     in-out property <string> privateKey;
     in-out property <string> publicKey;
-    in-out property <string> encryptText;
     in-out property <string> encryptedValue;
-    in-out property <string> decryptedValue;
-    in-out property <string> textToSign;
+    in-out property <string> signValue;
+    in-out property <string> verfiyData;
+    in-out property <string> verfiy;
     
     VerticalBox {
         Text {text: "Private Key = \{root.privateKey}\nPublic Key = \{root.publicKey}";height: 30px;}
@@ -27,12 +27,13 @@ VerticalBox {}
         HorizontalBox { 
             privateKey := LineEdit {width: 300px;height: 30px;
                 accepted(text) => {self.text = "";}
-                placeholder-text: "Hello World! \{root.encryptedValue}";}
+                placeholder-text: "Hello World! \{root.privateKey}";}
         HorizontalBox{ Button {
             width: 90px;            
             text: "Encrypt";
-            clicked => {root.request-generate-keys();}}}
-        }
+            clicked => {
+                root.request-generate-keys();}}}
+        }   
 
 
 
@@ -55,7 +56,7 @@ VerticalBox {}
         HorizontalBox {
             signValue := LineEdit {width: 300px;height: 30px;
                 accepted(text) => {self.text = "";}
-                placeholder-text: "Hello World! \{root.encryptedValue}";}
+                placeholder-text: "Hello World! \{root.signValue}";}
         HorizontalBox{ Button {
             width: 90px;            
             text: "Sign";
@@ -67,7 +68,7 @@ VerticalBox {}
         HorizontalBox {
             verfiyData := LineEdit {width: 300px;height: 30px;
                 accepted(text) => {self.text = "";}
-                placeholder-text: "Hello World! \{root.encryptedValue}";}
+                placeholder-text: "Hello World! \{root.verfiyData}";}
         HorizontalBox{ Button {
             width: 90px;            
             text: "Verfiy";
@@ -78,7 +79,7 @@ VerticalBox {}
         HorizontalBox {
             verfiy := LineEdit {width: 300px;height: 30px;
                 accepted(text) => {self.text = "";}
-                placeholder-text: "\{root.encryptedValue}";}
+                placeholder-text: "\{root.verfiy}";}
                 
             }
               HorizontalBox{ Button {

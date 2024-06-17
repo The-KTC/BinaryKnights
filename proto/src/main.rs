@@ -9,7 +9,7 @@ use slint::slint;
 
 slint::include_modules!();
 
-fn main() {
+fn main() -> Result<(), slint::PlatformError> {
     let key_id = "Beispie";
     let logger = Logger::new_boxed();
     let tpm_provider = SecModules::get_instance(
@@ -22,25 +22,29 @@ fn main() {
     let key_algorithm = AsymmetricEncryption::Rsa(KeyBits::Bits1024);
     let hash = Hash::Sha2(Sha2Bits::Sha224);
     let config: SecureEnclaveConfig = SecureEnclaveConfig::new(Some(key_algorithm), Some(hash));
+    
 
-    let ui = AppWindow::new();
-    ui::setKey("TEST");
-    match ui {
-        Ok(window) => {
-            window.on_request_generate_keys(move || {
-                match tpm_provider
-                    .lock()
-                    .unwrap()
-                    .create_key(key_id, Box::new(config.clone()))
-                {
-                    Ok(()) => ui::setKey("TEST"),
-                    Err(e) => println!("Failed to create key: {:?}", e),
-                }
-            });
-            if let Err(e) = window.run() {
-                eprintln!("Failed to run the app window: {:?}", e);
-            }
-        }
-        Err(e) => eprintln!("Failed to create app window: {:?}", e),
-    }
+    let appUI = AppWindow::new()?;
+    appUI.set_encryptedValue("Key created successful".into());
+    // match appUI {
+    //     Ok(window) => {
+    //         window.on_request_generate_keys(move || {
+    //             // appUI.set_encryptedValue("TEST");
+    //             match tpm_provider
+    //                 .lock()
+    //                 .unwrap()
+    //                 .create_key(key_id, Box::new(config.clone()))
+    //             {
+    //                 Ok(()) => appUI.set_encryptedValue("Key created successful".into()),
+    //                 Err(e) => appUI.set_encryptedValue(("Failed to create key: {:?}", e).into()),
+    //             }
+    //         });
+    //         if let Err(e) = window.run() {
+    //             eprintln!("Failed to run the app window: {:?}", e);
+    //         }
+    //     }
+    //     Err(e) => eprintln!("Failed to create app window: {:?}", e),
+    // }
+
+    appUI.run()
 }
