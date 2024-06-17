@@ -24,51 +24,55 @@ fn main() -> Result<(), slint::PlatformError> {
         Ok(()) => {ui.set_statusKey("Key created successful".into()); println!("Key created successful");},
         Err(e) => {ui.set_statusKey(format!("Failed to create key: {:?}", e).into()); println!("{}",format!("Failed to create key: {:?}", e));},
     }
-
-    // Load Key
     match tpm_provider.lock().unwrap().load_key(key_id, Box::new(config.clone())) {
         Ok(()) => println!("Key existing and ready for operations"),
         Err(e) => println!("Failed to load Key: {:?}", e),
     }
+
+
     let tpm_provider2 = tpm_provider.clone();
     app_ui.on_encrypt(move |string| {
         ui.set_input(string.clone());
         match tpm_provider2.lock().unwrap().encrypt_data(string.as_bytes()) {
             Ok(encrypted_data) => {
                 let tmp = String::from_utf8(encrypted_data);
-                ui.set_encryptedValue(format!("{}",tmp.expect("REASON")).into());
+                ui.set_encryptedValue(format!("{}",tmp.expect("error")).into());
                 println!("{}", ui.get_encryptedValue());
             }
             Err(e) => println!("Failed to encrypt data: {:?}", e),
         }
     });
-    let tpm_provider2 = tpm_provider.clone();
-    ui = app_ui.as_weak().unwrap();
+
+
+    let tpm_provider2 = tpm_provider.clone(); ui = app_ui.as_weak().unwrap();
     app_ui.on_decrypt(move |string| {
         println!("{}",string);
         match tpm_provider2.lock().unwrap().decrypt_data(&string.as_bytes()) {
             Ok(decrypted_data) => {let tmp = String::from_utf8(decrypted_data); 
-                ui.set_decryptedValue(format!("{}",tmp.expect("REASON")).into()); 
+                ui.set_decryptedValue(format!("{}",tmp.expect("error")).into()); 
                 println!("{}",ui.get_decryptedValue());},
             Err(e) => println!("Failed to decrypt data: {:?}", e),
         }
     });
-    let tpm_provider2 = tpm_provider.clone();
-    ui = app_ui.as_weak().unwrap();
+
+
+
+    let tpm_provider2 = tpm_provider.clone(); ui = app_ui.as_weak().unwrap();
     app_ui.on_sign(move |string| {
         ui.set_signValue(string.clone());
         let data = string.as_bytes();
         match tpm_provider2.lock().unwrap().sign_data(data) {
             Ok(signature) => {
                 let signed_data_bytes = String::from_utf8(signature.clone()); 
-                ui.set_verify(format!("{}",signed_data_bytes.expect("REASON")).into()); 
+                ui.set_verify(format!("{}",signed_data_bytes.expect("error")).into()); 
                 println!("Signature of '{}' => \n{:?}", string, ui.get_verify());}
             Err(e) => println!("Failed to sign data: {:?}", e),
         }; 
         println!("{}",string.trim());
     });
-    ui = app_ui.as_weak().unwrap();
-    let tpm_provider2 = tpm_provider.clone();
+
+
+    ui = app_ui.as_weak().unwrap(); let tpm_provider2 = tpm_provider.clone();
     app_ui.on_verifyData(move |string, string2| {
         match tpm_provider2.lock().unwrap().verify_signature(string2.as_bytes(), &string.as_bytes()) {
             Ok(valid) => {
@@ -82,5 +86,8 @@ fn main() -> Result<(), slint::PlatformError> {
             Err(e) => println!("Failed to verify signature: {:?}", e),
         }
     });
+
+
+
     app_ui.run()
 }

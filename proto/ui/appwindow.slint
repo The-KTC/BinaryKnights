@@ -13,14 +13,22 @@ export component AppWindow inherits Window {
     height: 700px;
 
 VerticalBox {}
-    
+    /** statusKey zeigt an, ob Keys in der SE generiert werden konnten
+        input == erste Eingabe für das Encrypten
+        encryptedValue == Verschlüsselung von input
+        decryptedValue == Entschlüsselung von encryptedValue
+        signValue == input zum Signen
+        verify == der signierte Input
+        status == ob der Input zum Signieren und der signierte Input übereinstimmt
+    */
+
     in-out property <string> statusKey;    
     in-out property <string> input;
     in-out property <string> encryptedValue;
     in-out property <string> decryptedValue;
     in-out property <string> signValue;
     in-out property <string> verify; 
-    in-out property <string> status;// if true or false
+    in-out property <string> status;
 
     VerticalBox {
         Text {text: "Private Key = \{root.statusKey}";height: 30px;}
@@ -76,14 +84,12 @@ VerticalBox {}
             clicked => {root.verifyData(verifyData.text, signValue.text);}}}
         }
         HorizontalBox {
-            Text {text: "Verify Status";}
-            Text {text: "\{root.status}";}
+            Text {text: "Verify Status: \{root.status}";}
         }
         HorizontalBox{ Button {
             width: 90px;            
             text: "clear";
             clicked => {
-                root.statusKey="";
                 root.input="";
                 root.encryptedValue="";
                 root.decryptedValue="";
