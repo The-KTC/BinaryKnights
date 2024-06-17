@@ -7,7 +7,7 @@ export component AppWindow inherits Window {
     callback encrypt(string);
     callback decrypt(string);
     callback sign(string);
-    callback verifyData(string);
+    callback verifyData(string, string); // signed und sign-input
     callback reset();
     width: 500px;
     height: 700px;
@@ -19,9 +19,9 @@ VerticalBox {}
     in-out property <string> encryptedValue;
     in-out property <string> decryptedValue;
     in-out property <string> signValue;
-    in-out property <string> verfiyData;
-    in-out property <string> verfiy;
-    
+    in-out property <string> verify; 
+    in-out property <string> status;// if true or false
+
     VerticalBox {
         Text {text: "Private Key = \{root.statusKey}";height: 30px;}
         Text {text: "Encryption & Decryption";height: 25px;font-size: 18px;}
@@ -52,36 +52,44 @@ VerticalBox {}
 
         Text {text: "Decrypted vaule: \{root.decryptedValue}"; }
         
-        Text {text: "Verfiy & Sign";height: 25px;font-size: 18px;}
+        Text {text: "verify & Sign";height: 25px;font-size: 18px;}
         Text {text: "Text to sign";}
 
 
         HorizontalBox {
             signValue := LineEdit {width: 300px;height: 30px;
-                accepted(text) => {root.signValue = self.text;}}
+            text: root.signValue;}
         HorizontalBox{ Button {
             width: 90px;            
             text: "Sign";
             clicked => {root.sign(signValue.text);}}}
         }
-
+    
         Text {text: "Signature: ";}
 
         HorizontalBox {
-            verfiyData := LineEdit {width: 300px;height: 30px;
-                accepted(text) => {root.verfiyData = self.text;}}
+            verifyData := LineEdit {width: 300px;height: 30px;enabled: false;
+                text: root.verify;}
         HorizontalBox{ Button {
             width: 90px;            
-            text: "Verfiy";
-            clicked => {root.verifyData(verfiyData.text);}}}
+            text: "verify";
+            clicked => {root.verifyData(verifyData.text, signValue.text);}}}
         }
-
-        Text {text: "Verify Status";}
-
+        HorizontalBox {
+            Text {text: "Verify Status";}
+            Text {text: "\{root.status}";}
+        }
         HorizontalBox{ Button {
             width: 90px;            
             text: "clear";
-            clicked => {root.reset();}}}
-          
+            clicked => {
+                root.statusKey="";
+                root.input="";
+                root.encryptedValue="";
+                root.decryptedValue="";
+                root.signValue="";
+                root.verify="";
+                root.status="";
+            }}}
     }
 }
