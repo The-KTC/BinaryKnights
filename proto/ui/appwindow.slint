@@ -31,7 +31,7 @@ VerticalBox {}
     in-out property <string> status;
 
     VerticalBox {
-        Text {text: "Private Key = \{root.statusKey}";height: 30px;}
+        Text {text: "Key-Status: \{root.statusKey}";height: 30px; font-size: 20px; }
         Text {text: "Encryption & Decryption";height: 25px;font-size: 18px;}
         Text {text: "Text to Encrypt";}
 
@@ -60,7 +60,7 @@ VerticalBox {}
 
         Text {text: "Decrypted vaule: \{root.decryptedValue}"; }
         
-        Text {text: "verify & Sign";height: 25px;font-size: 18px;}
+        Text {text: "Verify & Sign";height: 25px;font-size: 18px;}
         Text {text: "Text to sign";}
 
 
